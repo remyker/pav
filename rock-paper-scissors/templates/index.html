@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Rock Paper Scissors</title>
+    <link rel="stylesheet" href="/static/style.css">
+</head>
+<body>
+    <div class="container">
+        <h1>Rock Paper Scissors</h1>
+        <form method="post">
+            <div class="choices">
+                <label>
+                    <input type="radio" name="choice" value="Rock" required>
+                    <img src="/static/images/rock.png" alt="Rock">
+                </label>
+                <label>
+                    <input type="radio" name="choice" value="Paper">
+                    <img src="/static/images/paper.png" alt="Paper">
+                </label>
+                <label>
+                    <input type="radio" name="choice" value="Scissors">
+                    <img src="/static/images/scissors.png" alt="Scissors">
+                </label>
+            </div>
+            <button type="submit">Play</button>
+        </form>
+        {% if result %}
+            <div class="result">
+                <h2>Result: {{ result }}</h2>
+                <p>Your choice: <strong>{{ user_choice }}</strong></p>
+                <p>Computer's choice: <strong>{{ computer_choice }}</strong></p>
+            </div>
+        {% endif %}
+    </div>
+</body>
+</html>
